@@ -1,0 +1,17 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+    twoSum(nums: number[], target: number): number[] {
+        const map = {}
+        for(let i=0; i<nums.length; i++){
+            map[nums[i]] = i
+        }
+        for(let i=0; i<nums.length; i++){
+            let diff = target - nums[i]
+            if(map[diff] && map[diff] !== i) return [i, map[diff]]
+        }
+    }
+}
